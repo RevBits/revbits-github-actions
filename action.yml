@@ -1,0 +1,19 @@
+name: 'RevBits PAM Secrets Manager GitHub Action'
+description: 'GitHub action for retrieving secrets from RevBits PAM Secrets Manager'
+author: 'RevBits'
+inputs:
+  pam_hostname:
+    description: 'For self-hosted RevBits PAM instances provide your https://your.domain.com'
+    required: true
+  api_key:
+    description: 'The RevBits PAM API Key for retrieving secrets'
+    required: true
+  pam_secret_keys:
+    description: 'One or more secret keys (separated by commas) to retrieve and the corresponding GitHub environment variable name to set.'
+    required: true
+runs:
+  using: 'node16'
+  main: 'lib/index.js'
+branding:
+  icon: 'code'
+  color: 'red'
